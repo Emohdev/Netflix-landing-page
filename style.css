@@ -148,6 +148,17 @@ img {
     color: #fff;
 }
 
+/* Hide content initially */
+#tab-1-content,
+#tab-2-content,
+#tab-3-content {
+    display: none;
+}
+
+.show {
+    display: block !important; /*important means the display "must" be shown or block*/
+}
+
 #tab-1-content .tab-1-content-inner {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -293,4 +304,81 @@ img {
     font-size: 1rem;
     padding: 0.8rem 1.3rem;
     text-transform: uppercase;
+}
+
+.btn-icon {
+    margin-left: 1rem;
+}
+
+@media(max-width: 960px) {
+    .showcase {
+        height: 70vh;
+    }
+
+    .hide-sm {
+        display: none;
+    }
+
+    .showcase-top img {
+        top: 30%;
+        left: 5%;
+        transform: translate(0);
+    } 
+
+    .showcase-content h1 {
+        font-size: 2rem;
+        line-height: 1;
+    }
+
+    .showcase-content p {
+        font-size: 1rem;
+    }
+
+    .footer .footer-cols {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .btn-xl {
+        font-size: 1.2rem;
+        padding: 1.1rem 1rem;
+    }
+
+    .text-xl {
+        font-size: 1rem;
+    }
+
+    .text-lg {
+        font-size: 1.1rem;
+    }
+
+    .text-md {
+        font-size: 1rem;
+    }
+
+    .tab-border {
+        border-bottom: 1px solid #e50914;
+    }
+}
+
+@media(max-width: 700px) {
+    .showcase::after {
+        box-shadow: inset 80px 80px 250px #000000, inset -80px -80px 250px #000000; /*inset is used to apply the feature to the inside of container*/
+    }
+    #tab-1-content .tab-1-content-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    #tab-2-content .tab-2-content-top {
+        display: block;
+        text-align: center;
+    }
+
+    #tab-2-content .tab-2-content-bottom {
+        grid-template-columns: 1fr;
+    }
+
+    .tab-border {
+        border-bottom: 1px solid #e50914;
+    }
 }
